@@ -13,8 +13,14 @@ repositories {
     //maven 中央仓库
     mavenCentral()
 }
-
 dependencies {
+    /**
+     * Spring Boot Starter Actuator依赖项用于监视和管理您的应用程序 (spring-boot-starter-actuator)
+     * Spring Boot Starter Security依赖项用于Spring Security (spring-boot-starter-security)
+     * Spring Boot Starter Web依赖项用于编写Rest Endpoints (spring-boot-starter-web)
+     * Spring Boot Starter Thyme Leaf依赖关系用于创建Web应用程序 (spring-boot-starter-thymeleaf)
+     * Spring Boot Starter Test依赖关系用于编写测试用例 (spring-boot-starter-test)
+     */
 
     // Spring Boot Starter Web依赖项用于编写Rest Endpoints
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -23,14 +29,6 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
-
-    /**
-     * Spring Boot Starter Actuator依赖项用于监视和管理您的应用程序 (spring-boot-starter-actuator)
-     * Spring Boot Starter Security依赖项用于Spring Security (spring-boot-starter-security)
-     * Spring Boot Starter Web依赖项用于编写Rest Endpoints (spring-boot-starter-web)
-     * Spring Boot Starter Thyme Leaf依赖关系用于创建Web应用程序 (spring-boot-starter-thymeleaf)
-     * Spring Boot Starter Test依赖关系用于编写测试用例 (spring-boot-starter-test)
-     */
 }
 
 test {

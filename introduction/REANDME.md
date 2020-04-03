@@ -20,17 +20,15 @@
   
 ## 4.创建一个可执行的JAR
 
-##### 1.使用Maven命令mvn clean install 或者
-  
-##### 2.使用Gradle命令gradle clean构建
-  
-#####  3.在命令提示符下看到BUILD SUCCESSFUL消息
+##### 1.mvn clean install 或者 gradle clean 构建
+
+##### 2.在命令提示符下看到BUILD SUCCESSFUL消息
   
 ## 5.使用Java运行Hello World
 
 ##### 1.创建可执行的JAR文件后，可以在以下目录下找到它
   
-##### 2.Gradle，您可以在build / libs目录下找到JAR文件
+##### 2.Gradle，您可以在build/libs目录下找到JAR文件
   
 ##### 3.使用命令java –jar <JARFILE>运行JAR文件。
   
