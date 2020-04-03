@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 则无需添加@EnableAutoConfiguration(自动配置:Spring Boot Auto Configuration根据您在项目中添加的JAR依赖项自动配置Spring应用程序),
  * 则无需添加@ComponentScan(组件扫描:初始化时，Spring Boot应用程序会扫描所有Bean和包声明) 和
  * 则无需添加@SpringBootConfiguration批注。 该@SpringBootApplication注释包括所有其他的注解。
- * https://www.tutorialspoint.com/spring_boot/spring_boot_introduction.htm
  */
 
 /*
