@@ -1,2 +1,4 @@
 # Project exclude paths
 /.gradle/
+src/main/resources/static/
+src/main/resources/templates/
