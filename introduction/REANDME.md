@@ -1,6 +1,6 @@
-## `1.实现本章将向您介绍如何在Spring Boot应用程序上执行引导`
+## 1.实现本章将向您介绍如何在Spring Boot应用程序上执行引导
 
-## `2.主要方法应该是编写Spring Boot Application类。`
+## 2.主要方法应该是编写Spring Boot Application类。
 
 #####    此类应使用@SpringBootApplication进行注释。
     
@@ -8,7 +8,7 @@
     
 #####    您可以使用默认包在src / java / main目录下找到主类文件。
     
-## `3.要在Spring Boot Application主类文件本身中编写一个简单的Hello World Rest Endpoint`
+## 3.要在Spring Boot Application主类文件本身中编写一个简单的Hello World Rest Endpoint
 
 ### 请按照以下步骤操作-
 
@@ -22,7 +22,7 @@
 
 ##### 1.使用Maven命令mvn clean install 或者
   
-#####  2.使用Gradle命令gradle clean构建
+##### 2.使用Gradle命令gradle clean构建
   
 #####  3.在命令提示符下看到BUILD SUCCESSFUL消息
   
