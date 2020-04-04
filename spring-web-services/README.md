@@ -36,10 +36,59 @@
                 @PathVariable("id") String id) {
             }
 #####   请求参数
-            @RequestParam
+                @RequestParam
+                
+                批注用于从请求URL读取请求参数。默认情况下，它是必需的参数。
+                我们还可以为请求参数设置默认值，如下所示：    
+                public ResponseEntity<Object> getProduct(
+                   @RequestParam(value = "name", required = false, defaultValue = "honey") String name) {
+                }
+                
+#####   控制器建议
+
+              @ControllerAdvice是注释，用于全局处理异常。
+              @ExceptionHandler是用于处理特定异常并将自定义响应发送到客户端的注释。
+              
+#####   您可以使用以下代码创建@ControllerAdvice类以全局处理异常-
+
+              @ControllerAdvice
+                 public class ProductExceptionController {
+              }
+          
+#####   您可以定义一个扩展RuntimeException类的类
             
-            批注用于从请求URL读取请求参数。默认情况下，它是必需的参数。
-            我们还可以为请求参数设置默认值，如下所示：    
-            public ResponseEntity<Object> getProduct(
-               @RequestParam(value = "name", required = false, defaultValue = "honey") String name) {
+            public class ProductNotfoundException extends RuntimeException {
+               private static final long serialVersionUID = 1L;
+            }
+            
+#####   您可以定义@ExceptionHandler方法来处理如图所示的异常。
+
+            此方法应用于编写Controller Advice类文件
+            
+            @ExceptionHandler(value = ProductNotfoundException.class)
+            
+            public ResponseEntity<Object> exception(ProductNotfoundException exception) {
+            }
+        
+#####   使用下面给出的代码从API引发异常
+
+            @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
+            public ResponseEntity<Object> updateProduct() { 
+               throw new ProductNotfoundException();
+            }
+        
+#####   您可以定义ProductNotFoundException异常类应扩展RuntimeException。
+
+            public class ProductNotfoundException extends RuntimeException {
+               private static final long serialVersionUID = 1L;
+            }
+            
+#####   下面给出了用于全局处理异常的Controller Advice类
+            
+            @ControllerAdvice
+            public class ProductExceptionController {
+               @ExceptionHandler(value = ProductNotfoundException.class)
+               public ResponseEntity<Object> exception(ProductNotfoundException exception) {
+                  return new ResponseEntity<>("Product not found", HttpStatus.NOT_FOUND);
+               }
             }

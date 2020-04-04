@@ -1,5 +1,6 @@
 package com.timwang.springwebservices.controller;
 
+import com.timwang.springwebservices.exception.ProductNotfoundException;
 import com.timwang.springwebservices.model.Product;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,6 +46,8 @@ public class ProductServiceController {
     @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Object> updateProduct(@PathVariable("id") String id,
                                                 @RequestBody Product product) {
+        // 判断是否有这个id , 如果没有, 则返回异常
+        if (!productMap.containsKey(id)) throw new ProductNotfoundException();
         productMap.remove(id);
         product.setId(id);
         productMap.put(id, product);
